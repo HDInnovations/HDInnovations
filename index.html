@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>HDInnovations</title>
+        <meta
+            name="description"
+            content="Professional UNIT3D services, products, and support passes. Installations, updates, migrations, tuning, and more with HDInnovations."
+        />
+        <meta property="og:title" content="HDInnovations — UNIT3D Services & Products" />
+        <meta property="og:description" content="Installations, updates, migrations, tuning, themes, and support passes for UNIT3D — fast, reliable, and secure." />
+        <meta property="og:image" content="./media/logo.png" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary" />
+        <link rel="icon" type="image/x-icon" href="./media/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./app.css" />
+        <script
+            defer
+            src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+        ></script>
+    </head>
+    <body>
+        <header class="header" x-data="{ open:false }">
+            <div class="u-container header__bar">
+                <a href="#top" class="header__brand"><img src="./media/logo.png" alt="HDInnovations logo" class="brand__logo"/>HDInnovations</a>
+                <button
+                    class="btn btn--ghost header__toggle"
+                    @click="open=!open"
+                    :aria-expanded="open.toString()"
+                    aria-controls="site-nav"
+                    aria-label="Toggle navigation"
+                >
+                    <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                </button>
+                <nav id="site-nav" class="header__nav" :aria-expanded="open.toString()">
+                    <ul class="header__list">
+                        <li><a class="header__link" href="#services">Services</a></li>
+                        <li><a class="header__link" href="#products">Products</a></li>
+                        <li><a class="header__link" href="#passes">Discord Passes</a></li>
+                        <li><a class="header__link" href="#faq">FAQ</a></li>
+                        <li><a class="header__link" href="#donate">Donate</a></li>
+                    </ul>
+                </nav>
+                <div class="header__icons">
+                    <a class="btn btn--icon-circle" href="https://github.com/HDInnovations" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+                        <i class="fa-brands fa-github" aria-hidden="true"></i>
+                    </a>
+                    <a class="btn btn--icon-circle" href="mailto:hdinnovations@protonmail.com" aria-label="Email" title="Email">
+                        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                    </a>
+                    <a class="btn btn--icon-circle" href="#faq" aria-label="Discord" title="Discord (see username in FAQ)">
+                        <i class="fa-brands fa-discord" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <main id="top">
+            <section class="hero">
+                <div class="u-container">
+                    <h1 class="hero__title">UNIT3D Services, Products, and Support</h1>
+                    <p class="hero__subtitle">
+                        Installations, updates, migrations, performance tuning, themes and more.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Services -->
+            <section id="services" class="section section--darker">
+                <div class="u-container">
+                    <div class="section__head">
+                        <h2 class="section__title">Services</h2>
+                        <p class="section__desc">
+                            Everything you need to set up, upgrade, and scale UNIT3D with confidence.
+                        </p>
+                    </div>
+
+                    <div class="grid grid--cards">
+                        <!-- UNIT3D Install -->
+                        <article class="card" x-data="videoPlayer('./media/installer.mp4')">
+                            <div class="card__media" aria-label="Install video">
+                                <!-- Placeholder icon shown until play -->
+                                <i x-show="!isPlaying" class="card__media-icon fa-solid fa-download" aria-hidden="true"></i>
+                                <video x-show="isPlaying" class="embed__item" x-ref="vid" muted playsinline preload="metadata"></video>
+                                <!-- Hover controls (bottom-right): pause/play + fullscreen -->
+                                <div class="video-controls">
+                                    <button class="video-btn" @click="toggle()" :aria-label="isPlaying ? 'Pause video' : 'Play video'">
+                                        <template x-if="isPlaying">
+                                            <i class="fa-solid fa-pause" aria-hidden="true"></i>
+                                        </template>
+                                        <template x-if="!isPlaying">
+                                            <i class="fa-solid fa-play" aria-hidden="true"></i>
+                                        </template>
+                                    </button>
+                                    <button class="video-btn" @click="fullscreen()" aria-label="Toggle fullscreen">
+                                        <i class="fa-solid fa-expand" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card__body">
+                                <h3 class="card__title">UNIT3D Install</h3>
+                                <p class="card__text">Full installation on a clean dedicated server or VPS running Ubuntu 22.04 or later.</p>
+                                <div class="card__bottom">
+                                    <div class="card__price">$100</div>
+                                    <div class="card__actions">
+                                        <a href="#faq" class="btn btn--small">Get Started</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- UNIT3D Update -->
+                        <article class="card">
+                            <div class="card__media" aria-label="Update placeholder">
+                                <i class="card__media-icon fa-solid fa-arrows-rotate" aria-hidden="true"></i>
+                            </div>
+                            <div class="card__body">
+                                <h3 class="card__title">UNIT3D Update</h3>
+                                <p class="card__text">Update to latest version with all new features and improvements.</p>
+                                <div class="card__bottom">
+                                    <div class="card__price">$50</div>
+                                    <div class="card__actions">
+                                        <a href="#faq" class="btn btn--small">Book Update</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Major Update -->
+                        <article class="card">
+                            <span class="ribbon ribbon--variable">Variable Pricing</span>
+                            <div class="card__media" aria-label="Major update placeholder">
+                                <i class="card__media-icon fa-solid fa-screwdriver-wrench" aria-hidden="true"></i>
+                            </div>
+                            <div class="card__body">
+                                <h3 class="card__title">UNIT3D Major Update</h3>
+                                <p class="card__text">Complex jumps between major versions with compatibility and data checks.</p>
+                                <div class="card__bottom">
+                                    <div class="card__actions">
+                                        <a href="#faq" class="btn btn--small">Request Quote</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Rust Announce Install -->
+                        <article class="card">
+                            <div class="card__media" aria-label="Rust announce placeholder">
+                                <i class="card__media-icon fa-solid fa-bolt" aria-hidden="true"></i>
+                            </div>
+                            <div class="card__body">
+                                <h3 class="card__title">UNIT3D Rust Announce Install</h3>
+                                <p class="card__text">Install and configure Rust announce for max performance and scalability.</p>
+                                <div class="card__bottom">
+                                    <div class="card__price">$75</div>
+                                    <div class="card__actions">
+                                        <a href="#faq" class="btn btn--small">Schedule</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Server and Dependency Tuning -->
+                        <article class="card">
+                            <span class="ribbon ribbon--sale">On Sale</span>
+                            <div class="card__media" aria-label="Tuning placeholder">
+                                <i class="card__media-icon fa-solid fa-tachometer-alt" aria-hidden="true"></i>
+                            </div>
+                            <div class="card__body">
+                                <h3 class="card__title">Server & Dependency Tuning</h3>
+                                <p class="card__text">Full server and dependency tuning for maximum performance and scalability.</p>
+                                <div class="card__bottom">
+                                    <div class="card__price">$125 <span class="price__was">$175</span></div>
+                                    <div class="card__actions">
+                                        <a href="#faq" class="btn btn--small">Boost Performance</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Domain migration -->
+                        <article class="card">
+                            <div class="card__media" aria-label="Domain migration placeholder">
+                                <i class="card__media-icon fa-solid fa-globe" aria-hidden="true"></i>
+                            </div>
+                            <div class="card__body">
+                                <h3 class="card__title">UNIT3D Domain Migration</h3>
+                                <p class="card__text">Seamless domain cutover with redirects, certificates, and more.</p>
+                                <div class="card__bottom">
+                                    <div class="card__price">$50</div>
+                                    <div class="card__actions">
+                                        <a href="#faq" class="btn btn--small">Plan Migration</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Server migration -->
+                        <article class="card">
+                            <span class="ribbon ribbon--variable">Variable Pricing</span>
+                            <div class="card__media" aria-label="Server migration placeholder">
+                                <i class="card__media-icon fa-solid fa-server" aria-hidden="true"></i>
+                            </div>
+                            <div class="card__body">
+                                <h3 class="card__title">UNIT3D Server Migration</h3>
+                                <p class="card__text">Move to new infrastructure with minimal downtime.</p>
+                                <div class="card__bottom">
+                                    <div class="card__actions">
+                                        <a href="#faq" class="btn btn--small">Request Quote</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Auth Theme -->
+                        <article class="card">
+                            <div class="card__media" aria-label="Auth theme placeholder">
+                                <i class="card__media-icon fa-solid fa-lock" aria-hidden="true"></i>
+                            </div>
+                            <div class="card__body">
+                                <h3 class="card__title">UNIT3D Auth Theme</h3>
+                                <p class="card__text">Custom login/register theme styling consistent with your wants.</p>
+                                <div class="card__bottom">
+                                    <div class="card__price">$75</div>
+                                    <div class="card__actions">
+                                        <a href="#faq" class="btn btn--small">Order Theme</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Products -->
+            <section id="products" class="section section--darker">
+                <div class="u-container">
+                    <div class="section__head">
+                        <h2 class="section__title">Products</h2>
+                        <p class="section__desc">Premium tools for UNIT3D operators to bring your instance to the next level.</p>
+                    </div>
+
+                    <div class="grid grid--cards grid--center">
+                        <!-- Theme Utility -->
+                        <article class="card">
+                            <div class="card__media" aria-label="Theme utility placeholder">
+                                <i class="card__media-icon fa-solid fa-palette" aria-hidden="true"></i>
+                            </div>
+                            <div class="card__body">
+                                <h3 class="card__title">UNIT3D Theme Utility</h3>
+                                <p class="card__text">10 themes included. Lifetime access and updates. 1–2 new themes added yearly.</p>
+                                <div class="card__price">$199</div>
+                                <div class="card__actions">
+                                    <a href="#faq" class="btn btn--small">Buy License</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Easy Upload3r -->
+                        <article class="card">
+                            <span class="ribbon ribbon--limited">Limited Sales</span>
+                            <div class="card__media" aria-label="Uploader placeholder">
+                                <i class="card__media-icon fa-solid fa-cloud-arrow-up" aria-hidden="true"></i>
+                            </div>
+                            <div class="card__body">
+                                <h3 class="card__title">UNIT3D Easy Upload3r</h3>
+                                <p class="card__text">Lifetime updates. Limited to 8 sales — <strong>2 seats left</strong>.</p>
+                                <div class="card__price">$499</div>
+                                <div class="card__actions">
+                                    <a href="#faq" class="btn btn--small">Reserve Seat</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Discord Support Passes -->
+            <section id="passes" class="section section--darker">
+                <div class="u-container">
+                    <div class="section__head">
+                        <h2 class="section__title">Discord Support Pass</h2>
+                        <p class="section__desc">Choose a pass length and get priority help in Discord.</p>
+                    </div>
+
+                    <div class="passes">
+                        <article class="pass">
+                            <div class="pass__header">
+                                <h3 class="pass__title">3 Months</h3>
+                            </div>
+                            <div class="pass__price">$60</div>
+                            <div class="pass__actions"><a href="#faq" class="btn btn--small btn--block">Subscribe</a></div>
+                        </article>
+
+                        <article class="pass">
+                            <div class="pass__header">
+                                <h3 class="pass__title">6 Months</h3>
+                            </div>
+                            <div class="pass__price">$120</div>
+                            <div class="pass__actions"><a href="#faq" class="btn btn--small btn--block">Subscribe</a></div>
+                        </article>
+
+                        <article class="pass">
+                            <div class="pass__header">
+                                <span class="ribbon ribbon--sale">On Sale</span>
+                                <h3 class="pass__title">1 Year</h3>
+                            </div>
+                            <div class="pass__price">$150 <span class="price__was">$200</span></div>
+                            <div class="pass__actions"><a href="#faq" class="btn btn--small btn--block">Subscribe</a></div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ -->
+            <section id="faq" class="section section--darker">
+                <div class="u-container">
+                    <div class="section__head">
+                        <h2 class="section__title">Frequently Asked Questions</h2>
+                        <p class="section__desc">Answers to common questions about our services and products.</p>
+                    </div>
+
+                    <div class="faq" x-data="{ open: null }">
+                        <div class="faq__item">
+                            <button class="faq__q btn--ghost" @click="open === -1 ? open = null : open = -1" :aria-expanded="(open===-1).toString()">
+                                <i class="faq__icon fa-solid" :class="open===-1 ? 'fa-angle-down' : 'fa-angle-right'" aria-hidden="true"></i>
+                                <span>How can I contact you?</span>
+                            </button>
+                            <div class="faq__a" x-show="open===-1">
+                                Email: <a href="mailto:hdinnovations@protonmail.com">hdinnovations@protonmail.com</a><br/>
+                                Discord: Send a friend request to <strong>HDVinnie</strong>
+                            </div>
+                        </div>
+                        <div class="faq__item">
+                            <button class="faq__q btn--ghost" @click="open === 0 ? open = null : open = 0" :aria-expanded="(open===0).toString()">
+                                <i class="faq__icon fa-solid" :class="open===0 ? 'fa-angle-down' : 'fa-angle-right'" aria-hidden="true"></i>
+                                <span>What's included with installation?</span>
+                            </button>
+                            <div class="faq__a" x-show="open===0">Server setup, UNIT3D install, SSL, queues, cache, and basic hardening.</div>
+                        </div>
+                        <div class="faq__item">
+                            <button class="faq__q btn--ghost" @click="open === 1 ? open = null : open = 1" :aria-expanded="(open===1).toString()">
+                                <i class="faq__icon fa-solid" :class="open===1 ? 'fa-angle-down' : 'fa-angle-right'" aria-hidden="true"></i>
+                                <span>How long does an install take?</span>
+                            </button>
+                            <div class="faq__a" x-show="open===1">Typically 1–2 business days after access is granted.</div>
+                        </div>
+                        <div class="faq__item">
+                            <button class="faq__q btn--ghost" @click="open === 2 ? open = null : open = 2" :aria-expanded="(open===2).toString()">
+                                <i class="faq__icon fa-solid" :class="open===2 ? 'fa-angle-down' : 'fa-angle-right'" aria-hidden="true"></i>
+                                <span>Server requirements?</span>
+                            </button>
+                            <div class="faq__a" x-show="open===2">Ubuntu 20.04+, PHP 8.1+, MySQL/MariaDB, Redis, and Nginx/Apache; 2GB+ RAM recommended.</div>
+                        </div>
+                        <div class="faq__item">
+                            <button class="faq__q btn--ghost" @click="open === 3 ? open = null : open = 3" :aria-expanded="(open===3).toString()">
+                                <i class="faq__icon fa-solid" :class="open===3 ? 'fa-angle-down' : 'fa-angle-right'" aria-hidden="true"></i>
+                                <span>Payment methods?</span>
+                            </button>
+                            <div class="faq__a" x-show="open===3">PayPal, major cards, and Bitcoin. Custom terms available for larger projects.</div>
+                        </div>
+                        <div class="faq__item">
+                            <button class="faq__q btn--ghost" @click="open === 4 ? open = null : open = 4" :aria-expanded="(open===4).toString()">
+                                <i class="faq__icon fa-solid" :class="open===4 ? 'fa-angle-down' : 'fa-angle-right'" aria-hidden="true"></i>
+                                <span>Do you offer ongoing support?</span>
+                            </button>
+                            <div class="faq__a" x-show="open===4">Yes. Discord Support Passes and custom support retainers are available.</div>
+                        </div>
+                        <div class="faq__item">
+                            <button class="faq__q btn--ghost" @click="open === 5 ? open = null : open = 5" :aria-expanded="(open===5).toString()">
+                                <i class="faq__icon fa-solid" :class="open===5 ? 'fa-angle-down' : 'fa-angle-right'" aria-hidden="true"></i>
+                                <span>Can you migrate my current site?</span>
+                            </button>
+                            <div class="faq__a" x-show="open===5">We migrate from Gazelle, U‑232, XBTIT, and more — users, content, stats included.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Donate -->
+            <section id="donate" class="section section--darker">
+                <div class="u-container">
+                    <div class="section__head">
+                        <h2 class="section__title">Donate</h2>
+                        <p class="section__desc">Choose a method below. Every contribution makes a difference.</p>
+                    </div>
+
+                    <div class="grid grid--cards grid--center">
+                        <!-- Square -->
+                        <article class="card">
+                            <div class="card__media" aria-label="Square checkout">
+                                <i class="card__media-icon fa-solid fa-credit-card" aria-hidden="true"></i>
+                            </div>
+                            <div class="card__body">
+                                <h3 class="card__title">Donate with Square</h3>
+                                <p class="card__text u-muted">Secure checkout for one‑time or recurring support.</p>
+                                <div class="card__bottom">
+                                    <div class="card__actions">
+                                        <a class="btn btn--small" href="https://checkout.square.site/merchant/MLKDA40P1FQ1A/checkout/LLOH5S3CAFMHCHLRVD7KCYMX" target="_blank" rel="noopener">Open Square Checkout</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Bitcoin -->
+                        <article class="card" x-data="copyField('bc1qzgrgfrw2y4x20ywzu49q50ptxg8jeuqv3tmx9v')">
+                            <div class="card__media" aria-label="Bitcoin address">
+                                <i class="card__media-icon fa-solid fa-bitcoin-sign" aria-hidden="true"></i>
+                            </div>
+                            <div class="card__body">
+                                <h3 class="card__title">Bitcoin (BTC)</h3>
+                                <p class="card__text u-muted">Send BTC directly to our address below.</p>
+                                <div class="card__bottom">
+                                    <div class="copy">
+                                        <input class="copy__input" x-ref="inp" readonly value="bc1qzgrgfrw2y4x20ywzu49q50ptxg8jeuqv3tmx9v" aria-label="Bitcoin address" />
+                                        <button class="btn btn--small copy__btn" @click="copy()" x-text="label"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Bitcoin via Email / Proton Wallet -->
+                        <article class="card" x-data="copyField('hdinnovations@protonmail.com')">
+                            <div class="card__media" aria-label="Proton Wallet email">
+                                <i class="card__media-icon fa-solid fa-envelope" aria-hidden="true"></i>
+                            </div>
+                            <div class="card__body">
+                                <h3 class="card__title">Bitcoin via Email (Proton Wallet)</h3>
+                                <p class="card__text u-muted">Use Proton Wallet to send BTC to our email.</p>
+                                <div class="card__bottom">
+                                    <div class="copy">
+                                        <input class="copy__input" x-ref="inp" readonly value="hdinnovations@protonmail.com" aria-label="Proton Wallet email" />
+                                        <button class="btn btn--small copy__btn" @click="copy()" x-text="label"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="u-container footer__row">
+                <div class="footer__logo"><img src="./media/logo.png" alt="HDInnovations logo" class="brand__logo"/>HDInnovations</div>
+                <div class="footer__rights">© <span id="year"></span> HDInnovations. All rights reserved.</div>
+            </div>
+            <script>
+                const y = new Date().getFullYear();
+                const el = document.getElementById('year');
+                if (el) el.textContent = y;
+            </script>
+        </footer>
+
+                <script>
+                    function videoPlayer(src) {
+                        return {
+                            isPlaying: false,
+                            init() {
+                                const v = this.$refs.vid;
+                                if (!v.querySelector('source')) {
+                                    const s = document.createElement('source');
+                                    s.src = src || '';
+                                    s.type = 'video/mp4';
+                                    v.appendChild(s);
+                                }
+                                v.addEventListener('ended', () => { this.isPlaying = false; });
+                                v.addEventListener('pause', () => { this.isPlaying = false; });
+                                v.addEventListener('play', () => { this.isPlaying = true; });
+                            },
+                            toggle() {
+                                const v = this.$refs.vid;
+                                if (v.paused) {
+                                    v.play().catch(() => {});
+                                } else {
+                                    v.pause();
+                                }
+                            },
+                            fullscreen() {
+                                const el = this.$refs.vid;
+                                if (document.fullscreenElement) {
+                                    document.exitFullscreen().catch(() => {});
+                                } else {
+                                    (el.requestFullscreen && el.requestFullscreen())
+                                    || (el.webkitRequestFullscreen && el.webkitRequestFullscreen())
+                                    || (el.msRequestFullscreen && el.msRequestFullscreen());
+                                }
+                            }
+                        }
+                    }
+                </script>
+        <script>
+            // Copy helper (Alpine factory)
+            function copyField(value) {
+                return {
+                    label: 'Copy',
+                    copy() {
+                        const val = value || this.$refs.inp?.value || '';
+                        if (!val) return;
+                        navigator.clipboard.writeText(val).then(() => {
+                            this.label = 'Copied!';
+                            setTimeout(() => (this.label = 'Copy'), 1600);
+                        });
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
