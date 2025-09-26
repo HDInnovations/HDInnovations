@@ -258,7 +258,7 @@
                                 <p class="card__text">10 themes included. Lifetime access and updates. 1–2 new themes added yearly.</p>
                                 <div class="card__price">$199</div>
                                 <div class="card__actions">
-                                    <a href="#faq" class="btn btn--small">Buy License</a>
+                                    <a href="#faq" class="btn btn--small">Purchase</a>
                                 </div>
                             </div>
                         </article>
@@ -271,10 +271,10 @@
                             </div>
                             <div class="card__body">
                                 <h3 class="card__title">UNIT3D Easy Upload3r</h3>
-                                <p class="card__text">Lifetime updates. Limited to 8 sales — <strong>2 seats left</strong>.</p>
+                                <p class="card__text">Lifetime updates. Limited to 6 sales — <strong>2 seats left</strong>.</p>
                                 <div class="card__price">$499</div>
                                 <div class="card__actions">
-                                    <a href="#faq" class="btn btn--small">Reserve Seat</a>
+                                    <a href="#faq" class="btn btn--small">Purchase</a>
                                 </div>
                             </div>
                         </article>
@@ -296,7 +296,7 @@
                                 <h3 class="pass__title">3 Months</h3>
                             </div>
                             <div class="pass__price">$60</div>
-                            <div class="pass__actions"><a href="#faq" class="btn btn--small btn--block">Subscribe</a></div>
+                            <div class="pass__actions"><a href="#faq" class="btn btn--small btn--block">Purchase</a></div>
                         </article>
 
                         <article class="pass">
@@ -304,7 +304,7 @@
                                 <h3 class="pass__title">6 Months</h3>
                             </div>
                             <div class="pass__price">$120</div>
-                            <div class="pass__actions"><a href="#faq" class="btn btn--small btn--block">Subscribe</a></div>
+                            <div class="pass__actions"><a href="#faq" class="btn btn--small btn--block">Purchase</a></div>
                         </article>
 
                         <article class="pass">
@@ -313,7 +313,7 @@
                                 <h3 class="pass__title">1 Year</h3>
                             </div>
                             <div class="pass__price">$150 <span class="price__was">$200</span></div>
-                            <div class="pass__actions"><a href="#faq" class="btn btn--small btn--block">Subscribe</a></div>
+                            <div class="pass__actions"><a href="#faq" class="btn btn--small btn--block">Purchase</a></div>
                         </article>
                     </div>
                 </div>
@@ -343,48 +343,48 @@
                                 <i class="faq__icon fa-solid" :class="open===0 ? 'fa-angle-down' : 'fa-angle-right'" aria-hidden="true"></i>
                                 <span>What's included with installation?</span>
                             </button>
-                            <div class="faq__a" x-show="open===0">Server setup, UNIT3D install, SSL, queues, cache, and basic hardening.</div>
+                            <div class="faq__a" x-show="open===0">Complete installation of UNIT3D start to finish providing a live fully functional site.</div>
                         </div>
                         <div class="faq__item">
                             <button class="faq__q btn--ghost" @click="open === 1 ? open = null : open = 1" :aria-expanded="(open===1).toString()">
                                 <i class="faq__icon fa-solid" :class="open===1 ? 'fa-angle-down' : 'fa-angle-right'" aria-hidden="true"></i>
-                                <span>How long does an install take?</span>
+                                <span>What is the wait time after purchasing a product or service?</span>
                             </button>
-                            <div class="faq__a" x-show="open===1">Typically 1–2 business days after access is granted.</div>
+                            <div class="faq__a" x-show="open===1">Typically 1–2 business days after payment is confirmed.</div>
                         </div>
                         <div class="faq__item">
                             <button class="faq__q btn--ghost" @click="open === 2 ? open = null : open = 2" :aria-expanded="(open===2).toString()">
                                 <i class="faq__icon fa-solid" :class="open===2 ? 'fa-angle-down' : 'fa-angle-right'" aria-hidden="true"></i>
-                                <span>Server requirements?</span>
+                                <span>Do you offer custom coding for UNIT3D?</span>
                             </button>
-                            <div class="faq__a" x-show="open===2">Ubuntu 20.04+, PHP 8.1+, MySQL/MariaDB, Redis, and Nginx/Apache; 2GB+ RAM recommended.</div>
+                            <div class="faq__a" x-show="open===2">Yes, we offer custom coding services for UNIT3D to meet your specific needs. Depending on the size of the project, timelines and costs may vary.</div>
                         </div>
                         <div class="faq__item">
                             <button class="faq__q btn--ghost" @click="open === 3 ? open = null : open = 3" :aria-expanded="(open===3).toString()">
                                 <i class="faq__icon fa-solid" :class="open===3 ? 'fa-angle-down' : 'fa-angle-right'" aria-hidden="true"></i>
-                                <span>Payment methods?</span>
+                                <span>Payment methods accepted?</span>
                             </button>
-                            <div class="faq__a" x-show="open===3">PayPal, major cards, and Bitcoin. Custom terms available for larger projects.</div>
+                            <div class="faq__a" x-show="open===3">We use Square for payment processing. Custom terms available for high cost services.</div>
                         </div>
                         <div class="faq__item">
                             <button class="faq__q btn--ghost" @click="open === 4 ? open = null : open = 4" :aria-expanded="(open===4).toString()">
                                 <i class="faq__icon fa-solid" :class="open===4 ? 'fa-angle-down' : 'fa-angle-right'" aria-hidden="true"></i>
-                                <span>Do you offer ongoing support?</span>
+                                <span>Do you offer technical support?</span>
                             </button>
-                            <div class="faq__a" x-show="open===4">Yes. Discord Support Passes and custom support retainers are available.</div>
+                            <div class="faq__a" x-show="open===4">Yes. We have a private Discord server for support and general discussion.</div>
                         </div>
                         <div class="faq__item">
                             <button class="faq__q btn--ghost" @click="open === 5 ? open = null : open = 5" :aria-expanded="(open===5).toString()">
                                 <i class="faq__icon fa-solid" :class="open===5 ? 'fa-angle-down' : 'fa-angle-right'" aria-hidden="true"></i>
-                                <span>Can you migrate my current site?</span>
+                                <span>Can you migrate my current site to UNIT3D?</span>
                             </button>
-                            <div class="faq__a" x-show="open===5">We migrate from Gazelle, U‑232, XBTIT, and more — users, content, stats included.</div>
+                            <div class="faq__a" x-show="open===5">We can migrate from Gazelle, U‑232, XBTIT, and more — users, content, stats and more are ported over.</div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Donate -->
+            <!-- Donate
             <section id="donate" class="section section--darker">
                 <div class="u-container">
                     <div class="section__head">
@@ -393,7 +393,6 @@
                     </div>
 
                     <div class="grid grid--cards grid--center">
-                        <!-- Square -->
                         <article class="card">
                             <div class="card__media" aria-label="Square checkout">
                                 <i class="card__media-icon fa-solid fa-credit-card" aria-hidden="true"></i>
@@ -409,7 +408,6 @@
                             </div>
                         </article>
 
-                        <!-- Bitcoin -->
                         <article class="card" x-data="copyField('bc1qzgrgfrw2y4x20ywzu49q50ptxg8jeuqv3tmx9v')">
                             <div class="card__media" aria-label="Bitcoin address">
                                 <i class="card__media-icon fa-solid fa-bitcoin-sign" aria-hidden="true"></i>
@@ -426,7 +424,6 @@
                             </div>
                         </article>
 
-                        <!-- Bitcoin via Email / Proton Wallet -->
                         <article class="card" x-data="copyField('hdinnovations@protonmail.com')">
                             <div class="card__media" aria-label="Proton Wallet email">
                                 <i class="card__media-icon fa-solid fa-envelope" aria-hidden="true"></i>
@@ -444,7 +441,7 @@
                         </article>
                     </div>
                 </div>
-            </section>
+            </section>-->
         </main>
 
         <footer class="footer">
