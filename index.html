@@ -35,7 +35,7 @@
     <body>
         <header class="header" x-data="{ open:false }">
             <div class="u-container header__bar">
-                <a href="#top" class="header__brand"><img src="./media/logo.png" alt="HDInnovations logo" class="brand__logo"/>HDInnovations</a>
+                <a href="index.html" class="header__brand"><img src="./media/logo.png" alt="HDInnovations logo" class="brand__logo"/>HDInnovations</a>
                 <button
                     class="btn btn--ghost header__toggle"
                     @click="open=!open"
@@ -63,6 +63,9 @@
                     <a class="btn btn--icon-circle" href="#faq" aria-label="Discord" title="Discord (see username in FAQ)">
                         <i class="fa-brands fa-discord" aria-hidden="true"></i>
                     </a>
+                    <a class="btn btn--icon-circle" href="donate.html" aria-label="Donate" title="Donate">
+                        <i class="fa-solid fa-heart" aria-hidden="true"></i>
+                    </a>
                 </div>
             </div>
         </header>
@@ -70,7 +73,8 @@
         <main id="top">
             <section class="hero">
                 <div class="u-container">
-                    <h1 class="hero__title">UNIT3D Services, Products, and Support</h1>
+                    <img src="./media/unit3d.png" style="width: 400px;">
+                    <h1 class="hero__title">Services, Products, and Support</h1>
                     <p class="hero__subtitle">
                         Installations, updates, migrations, performance tuning, themes and more.
                     </p>
@@ -388,65 +392,6 @@
                     </div>
                 </div>
             </section>
-
-            <!-- Donate
-            <section id="donate" class="section section--darker">
-                <div class="u-container">
-                    <div class="section__head">
-                        <h2 class="section__title">Donate</h2>
-                        <p class="section__desc">Choose a method below. Every contribution makes a difference.</p>
-                    </div>
-
-                    <div class="grid grid--cards grid--center">
-                        <article class="card">
-                            <div class="card__media" aria-label="Square checkout">
-                                <i class="card__media-icon fa-solid fa-credit-card" aria-hidden="true"></i>
-                            </div>
-                            <div class="card__body">
-                                <h3 class="card__title">Donate with Square</h3>
-                                <p class="card__text u-muted">Secure checkout for one‑time or recurring support.</p>
-                                <div class="card__bottom">
-                                    <div class="card__actions">
-                                        <a class="btn btn--small" href="https://checkout.square.site/merchant/MLKDA40P1FQ1A/checkout/LLOH5S3CAFMHCHLRVD7KCYMX" target="_blank" rel="noopener">Open Square Checkout</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="card" x-data="copyField('bc1qzgrgfrw2y4x20ywzu49q50ptxg8jeuqv3tmx9v')">
-                            <div class="card__media" aria-label="Bitcoin address">
-                                <i class="card__media-icon fa-solid fa-bitcoin-sign" aria-hidden="true"></i>
-                            </div>
-                            <div class="card__body">
-                                <h3 class="card__title">Bitcoin (BTC)</h3>
-                                <p class="card__text u-muted">Send BTC directly to our address below.</p>
-                                <div class="card__bottom">
-                                    <div class="copy">
-                                        <input class="copy__input" x-ref="inp" readonly value="bc1qzgrgfrw2y4x20ywzu49q50ptxg8jeuqv3tmx9v" aria-label="Bitcoin address" />
-                                        <button class="btn btn--small copy__btn" @click="copy()" x-text="label"></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="card" x-data="copyField('hdinnovations@protonmail.com')">
-                            <div class="card__media" aria-label="Proton Wallet email">
-                                <i class="card__media-icon fa-solid fa-envelope" aria-hidden="true"></i>
-                            </div>
-                            <div class="card__body">
-                                <h3 class="card__title">Bitcoin via Email (Proton Wallet)</h3>
-                                <p class="card__text u-muted">Use Proton Wallet to send BTC to our email.</p>
-                                <div class="card__bottom">
-                                    <div class="copy">
-                                        <input class="copy__input" x-ref="inp" readonly value="hdinnovations@protonmail.com" aria-label="Proton Wallet email" />
-                                        <button class="btn btn--small copy__btn" @click="copy()" x-text="label"></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </section>-->
         </main>
 
         <footer class="footer">
@@ -460,7 +405,6 @@
                 if (el) el.textContent = y;
             </script>
         </footer>
-
                 <script>
                     function videoPlayer(src) {
                         return {
@@ -498,21 +442,5 @@
                         }
                     }
                 </script>
-        <script>
-            // Copy helper (Alpine factory)
-            function copyField(value) {
-                return {
-                    label: 'Copy',
-                    copy() {
-                        const val = value || this.$refs.inp?.value || '';
-                        if (!val) return;
-                        navigator.clipboard.writeText(val).then(() => {
-                            this.label = 'Copied!';
-                            setTimeout(() => (this.label = 'Copy'), 1600);
-                        });
-                    }
-                }
-            }
-        </script>
     </body>
 </html>

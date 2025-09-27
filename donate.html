@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>HDInnovations</title>
+        <meta name="description" content="Professional UNIT3D services, products, and support passes. Installations, updates, migrations, tuning, and more with HDInnovations.">
+        
+        <meta property="og:url" content="https://hdinnovations.github.io/HDInnovations">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="HDInnovations — UNIT3D Services & Products">
+        <meta property="og:description" content="Professional UNIT3D services, products, and support passes. Installations, updates, migrations, tuning, and more with HDInnovations.">
+        <meta property="og:image" content="https://hdinnovations.github.io/HDInnovations/media/logo.png">
+
+        <meta name="twitter:card" content="summary_large_image">
+        <meta property="twitter:domain" content="hdinnovations.github.io">
+        <meta property="twitter:url" content="https://hdinnovations.github.io/HDInnovations">
+        <meta name="twitter:title" content="HDInnovations — UNIT3D Services & Products">
+        <meta name="twitter:description" content="Professional UNIT3D services, products, and support passes. Installations, updates, migrations, tuning, and more with HDInnovations.">
+        <meta name="twitter:image" content="https://hdinnovations.github.io/HDInnovations/media/logo.png">
+
+        <link rel="icon" type="image/x-icon" href="https://hdinnovations.github.io/HDInnovations/media/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./app.css" />
+        <script
+            defer
+            src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+        ></script>
+    </head>
+    <body>
+        <header class="header" x-data="{ open:false }">
+            <div class="u-container header__bar">
+                <a href="index.html" class="header__brand"><img src="./media/logo.png" alt="HDInnovations logo" class="brand__logo"/>HDInnovations</a>
+                <button
+                    class="btn btn--ghost header__toggle"
+                    @click="open=!open"
+                    :aria-expanded="open.toString()"
+                    aria-controls="site-nav"
+                    aria-label="Toggle navigation"
+                >
+                    <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                </button>
+                <nav id="site-nav" class="header__nav" :aria-expanded="open.toString()">
+                    <ul class="header__list">
+                        <li><a class="header__link" href="index.html#services">Services</a></li>
+                        <li><a class="header__link" href="index.html#products">Products</a></li>
+                        <li><a class="header__link" href="index.html#passes">Discord Passes</a></li>
+                        <li><a class="header__link" href="index.html#faq">FAQ</a></li>
+                    </ul>
+                </nav>
+                <div class="header__icons">
+                    <a class="btn btn--icon-circle" href="https://github.com/HDInnovations" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+                        <i class="fa-brands fa-github" aria-hidden="true"></i>
+                    </a>
+                    <a class="btn btn--icon-circle" href="mailto:hdinnovations@protonmail.com" aria-label="Email" title="Email">
+                        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                    </a>
+                    <a class="btn btn--icon-circle" href="#faq" aria-label="Discord" title="Discord (see username in FAQ)">
+                        <i class="fa-brands fa-discord" aria-hidden="true"></i>
+                    </a>
+                    <a class="btn btn--icon-circle" href="donate.html" aria-label="Donate" title="Donate">
+                        <i class="fa-solid fa-heart" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <main id="top">
+            <section class="hero">
+                <div class="u-container">
+                    <img src="./media/unit3d.png" style="width: 400px;">
+                    <h1 class="hero__title">Show Your Support</h1>
+                    <p class="hero__subtitle">
+                        If you find our open source software valuable, consider making a donation to help us continue our work.
+                    </p>
+                </div>
+            </section>
+
+            <section id="donate" class="section section--darker">
+                <div class="u-container">
+                    <div class="section__head">
+                        <h2 class="section__title">Donate</h2>
+                        <p class="section__desc">Choose a method below. Every contribution makes a difference big or small.</p>
+                    </div>
+
+                    <div class="grid grid--cards grid--center">
+                        <article class="card">
+                            <div class="card__media" aria-label="Square checkout">
+                                <i class="card__media-icon fa-solid fa-credit-card" aria-hidden="true"></i>
+                            </div>
+                            <div class="card__body">
+                                <h3 class="card__title">Donate with Square</h3>
+                                <p class="card__text u-muted">Secure checkout for one‑time or recurring support.</p>
+                                <div class="card__bottom">
+                                    <div class="card__actions">
+                                        <a class="btn btn--small" href="https://checkout.square.site/merchant/MLKDA40P1FQ1A/checkout/LLOH5S3CAFMHCHLRVD7KCYMX" target="_blank" rel="noopener">Open Square Checkout</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card" x-data="copyField('bc1qzgrgfrw2y4x20ywzu49q50ptxg8jeuqv3tmx9v')">
+                            <div class="card__media" aria-label="Bitcoin address">
+                                <i class="card__media-icon fa-solid fa-bitcoin-sign" aria-hidden="true"></i>
+                            </div>
+                            <div class="card__body">
+                                <h3 class="card__title">Bitcoin (BTC)</h3>
+                                <p class="card__text u-muted">Send BTC directly to our address below.</p>
+                                <div class="card__bottom">
+                                    <div class="copy">
+                                        <input class="copy__input" x-ref="inp" readonly value="bc1qzgrgfrw2y4x20ywzu49q50ptxg8jeuqv3tmx9v" aria-label="Bitcoin address" />
+                                        <button class="btn btn--small copy__btn" @click="copy()" x-text="label"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card" x-data="copyField('hdinnovations@protonmail.com')">
+                            <div class="card__media" aria-label="Proton Wallet email">
+                                <i class="card__media-icon fa-solid fa-envelope" aria-hidden="true"></i>
+                            </div>
+                            <div class="card__body">
+                                <h3 class="card__title">Bitcoin via Email (Proton Wallet)</h3>
+                                <p class="card__text u-muted">Use Proton Wallet to send BTC to our email.</p>
+                                <div class="card__bottom">
+                                    <div class="copy">
+                                        <input class="copy__input" x-ref="inp" readonly value="hdinnovations@protonmail.com" aria-label="Proton Wallet email" />
+                                        <button class="btn btn--small copy__btn" @click="copy()" x-text="label"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section id="donors" class="section section--dark donor-section">
+                <div class="u-container">
+                    <div class="section__head">
+                        <h2 class="section__title">Community Donors</h2>
+                        <p class="section__desc">These supporters keep UNIT3D and other projects alive. All people listed below have at least donated once. We&apos;re grateful for every contribution.</p>
+                    </div>
+
+                    <div class="donor-gallery" role="list">
+                        <article class="donor-profile" role="listitem">
+                            <span class="donor-avatar" aria-hidden="true">A</span>
+                            <h3 class="donor-profile__name">Airclay</h3>
+                        </article>
+                        <article class="donor-profile" role="listitem">
+                            <span class="donor-avatar" aria-hidden="true">H</span>
+                            <h3 class="donor-profile__name">Henriette</h3>
+                        </article>
+                        <article class="donor-profile" role="listitem">
+                            <span class="donor-avatar" aria-hidden="true">J</span>
+                            <h3 class="donor-profile__name">Jocelyn</h3>
+                        </article>
+                        <article class="donor-profile" role="listitem">
+                            <span class="donor-avatar" aria-hidden="true">M</span>
+                            <h3 class="donor-profile__name">Marcus</h3>
+                        </article>
+                        <article class="donor-profile" role="listitem">
+                            <span class="donor-avatar" aria-hidden="true">N</span>
+                            <h3 class="donor-profile__name">N3LSO</h3>
+                        </article>
+                        <article class="donor-profile" role="listitem">
+                            <span class="donor-avatar" aria-hidden="true">P</span>
+                            <h3 class="donor-profile__name">Poppers</h3>
+                        </article>
+                        <article class="donor-profile" role="listitem">
+                            <span class="donor-avatar" aria-hidden="true">S</span>
+                            <h3 class="donor-profile__name">Sam</h3>
+                        </article>
+                        <article class="donor-profile" role="listitem">
+                            <span class="donor-avatar" aria-hidden="true">S</span>
+                            <h3 class="donor-profile__name">Samual</h3>
+                        </article>
+                        <article class="donor-profile" role="listitem">
+                            <span class="donor-avatar" aria-hidden="true">S</span>
+                            <h3 class="donor-profile__name">Schizobolic</h3>
+                        </article>
+                        <article class="donor-profile" role="listitem">
+                            <span class="donor-avatar" aria-hidden="true">T</span>
+                            <h3 class="donor-profile__name">Timmy</h3>
+                        </article>
+                        <article class="donor-profile" role="listitem">
+                            <span class="donor-avatar" aria-hidden="true">X</span>
+                            <h3 class="donor-profile__name">x64</h3>
+                        </article>
+                    </div>
+
+                    <div class="donor-callout">
+                        <div>
+                            <h3 class="donor-callout__title">Add your name to the wall</h3>
+                            <p class="donor-callout__text">Every donation keeps our project alive. Large or small, we&apos;ll showcase your impact.</p>
+                        </div>
+                        <a class="btn btn--small" href="#donate">Become a donor</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="u-container footer__row">
+                <div class="footer__logo"><img src="./media/logo.png" alt="HDInnovations logo" class="brand__logo"/>HDInnovations</div>
+                <div class="footer__rights">© <span id="year"></span> HDInnovations. All rights reserved.</div>
+            </div>
+            <script>
+                const y = new Date().getFullYear();
+                const el = document.getElementById('year');
+                if (el) el.textContent = y;
+            </script>
+        </footer>
+
+        <script>
+            function copyField(value) {
+                return {
+                    label: 'Copy',
+                    copy() {
+                        const val = value || this.$refs.inp?.value || '';
+                        if (!val) return;
+                        navigator.clipboard.writeText(val).then(() => {
+                            this.label = 'Copied!';
+                            setTimeout(() => (this.label = 'Copy'), 1600);
+                        });
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
