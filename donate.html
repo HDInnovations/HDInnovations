@@ -73,10 +73,9 @@
         <main id="top">
             <section class="hero">
                 <div class="u-container">
-                    <img src="./media/unit3d.png" class="hero__image" alt="UNIT3D">
                     <h1 class="hero__title">Show Your Support</h1>
                     <p class="hero__subtitle">
-                        If you find our open source software valuable, consider making a donation to help us continue our work.
+                        If you find our software valuable, consider making a donation to help us continue our work.
                     </p>
                 </div>
             </section>
@@ -89,16 +88,32 @@
                     </div>
 
                     <div class="grid grid--cards grid--center">
+                        <article class="card" x-data="copyField('0x4bd5d60AE822caBA895dD4a66260CB4b81cd7CDc')">
+                            <div class="card__media" aria-label="USDC address">
+                                <i class="card__media-icon fa-brands fa-coins" aria-hidden="true"></i>
+                            </div>
+                            <div class="card__body">
+                                <h3 class="card__title">USDC</h3>
+                                <p class="card__text u-muted">Send USDC directly to our address below on the Ethereum</p>
+                                <div class="card__bottom">
+                                    <div class="copy">
+                                        <input class="copy__input" x-ref="inp" readonly value="0x4bd5d60AE822caBA895dD4a66260CB4b81cd7CDc" aria-label="Bitcoin address" />
+                                        <button class="btn btn--small copy__btn" @click="copy()" x-text="label"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        
                         <article class="card" x-data="copyField('85WrXRzmbF9fTp9UHLHhhEVeF5VBCHSen9suSvK4FkKqcyhXeikS1zM4u5gfa5gyQV9dS8yuoDwMGBJ1rQ8w1CWkJXN9kSo')">
                             <div class="card__media" aria-label="Monero address">
                                 <i class="card__media-icon fa-brands fa-monero" aria-hidden="true"></i>
                             </div>
                             <div class="card__body">
                                 <h3 class="card__title">Monero (XMR)</h3>
-                                <p class="card__text u-muted">Send XMR directly to our address below on the Moonero network</p>
+                                <p class="card__text u-muted">Send XMR directly to our address below on the Monero network</p>
                                 <div class="card__bottom">
                                     <div class="copy">
-                                        <input class="copy__input" x-ref="inp" readonly value="85WrXRzmbF9fTp9UHLHhhEVeF5VBCHSen9suSvK4FkKqcyhXeikS1zM4u5gfa5gyQV9dS8yuoDwMGBJ1rQ8w1CWkJXN9kSo" aria-label="Bitcoin address" />
+                                        <input class="copy__input" x-ref="inp" readonly value="85WrXRzmbF9fTp9UHLHhhEVeF5VBCHSen9suSvK4FkKqcyhXeikS1zM4u5gfa5gyQV9dS8yuoDwMGBJ1rQ8w1CWkJXN9kSo" aria-label="Monero address" />
                                         <button class="btn btn--small copy__btn" @click="copy()" x-text="label"></button>
                                     </div>
                                 </div>
@@ -144,7 +159,7 @@
                 <div class="u-container">
                     <div class="section__head">
                         <h2 class="section__title">Community Donors</h2>
-                        <p class="section__desc">These supporters keep UNIT3D and other projects alive. All people listed below have at least donated once. We&apos;re grateful for every contribution.</p>
+                        <p class="section__desc">These supporters keep our projects and motivation alive. All people listed below have at least donated once. We&apos;re grateful for every contribution.</p>
                     </div>
 
                     <div class="donor-gallery" role="list">
