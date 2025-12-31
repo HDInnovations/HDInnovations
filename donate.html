@@ -75,7 +75,7 @@
         </header>
 
         <main id="top">
-            <section class="hero" style="padding-bottom: 10px;">
+            <section class="hero">
                 <div class="u-container">
                     <h1 class="hero__title">Show Your Support</h1>
                     <p class="hero__subtitle">
@@ -84,7 +84,7 @@
                 </div>
             </section>
 
-            <section id="donate" class="section section--darker" style="padding-top: 0px;">
+            <section id="donate" class="section">
                 <div class="u-container">
                     <div class="grid grid--cards grid--center">
                         <article class="card">
@@ -241,8 +241,22 @@
         </main>
 
         <footer class="footer">
-            <div class="u-container footer__row">
-                <div class="footer__rights">© <span id="year"></span> HDInnovations. All rights reserved.</div>
+            <div class="u-container">
+                <div class="footer__main">
+                    <div class="footer__brand">
+                        <img src="./media/logo.png" alt="HDInnovations logo" class="brand__logo"/>
+                        <span class="footer__brand-text">HDInnovations</span>
+                    </div>
+                    <div class="footer__rights">© <span id="year"></span> HDInnovations. All rights reserved.</div>
+                    <div class="footer__social">
+                        <a class="btn btn--icon-circle" href="https://github.com/HDInnovations" target="_blank" rel="noopener" aria-label="GitHub">
+                            <i class="fa-brands fa-github" aria-hidden="true"></i>
+                        </a>
+                        <a class="btn btn--icon-circle" href="mailto:hdinnovations@protonmail.com" aria-label="Email">
+                            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
             <script>
                 const y = new Date().getFullYear();
